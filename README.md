@@ -4,6 +4,7 @@
 ```
 npm install
 ```
+右键菜单控制
 
 ### Compiles and hot-reloads for development
 ```

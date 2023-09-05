@@ -3,8 +3,10 @@ import store from './store'
 import App from './App.vue'
 import router from './router'
 // 框架样式
-import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+// 右键菜单
+import Contextmenu from "vue-contextmenujs"
 
 Vue.config.productionTip = false
 
@@ -15,3 +17,5 @@ new Vue({
 }).$mount('#app')
 
 Vue.use(Antd)
+Vue.use(Contextmenu)
+
