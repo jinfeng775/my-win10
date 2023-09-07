@@ -3,7 +3,7 @@
     <div class="LeftTaskbar" style="float: left;">
       <LeftTaskbar />
     </div>
-    <div @click="calendarf" class="rightTaskbar" style="float: right;">
+    <div @click="calendarf"  class="rightTaskbar" style="float: right;">
       <RightTaskbar />
     </div>
   </div>
@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     calendarf() {
-      this.$store.dispatch('setCalendarShow', true)
+        this.$store.dispatch('setCalendarShow', true)
     }
   }, computed: {
     ...mapState(['calendarShow'])

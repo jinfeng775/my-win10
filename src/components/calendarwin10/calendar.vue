@@ -1,5 +1,5 @@
 <template>
-  <div ref="treeWrap" id="calendarwin10">
+  <div ref="treeWrap" class="animate__animated animate__fadeInUp" id="calendarwin10">
     <div style="width: 320px; height: 400px; color: #fff;">
       <div class="formattedDate">{{ formattedDate }}</div>
       <div class="specificDate">{{ specificDate }}</div>
@@ -189,6 +189,10 @@ export default {
 };
 </script>
 <style rel="stylesheet/scss" lang="scss" scoped>
+ ::v-deep .animate__animated,.animate__fadeInUp{
+  --animate-duration: .5s !important;         //动画持续时间
+  --animate-delay: .5s !important;              //动画延迟时间
+}
 #calendarwin10 {
   width: 320px;
   height: 600px;
