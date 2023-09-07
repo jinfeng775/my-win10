@@ -7,15 +7,16 @@ import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 // 右键菜单
 import Contextmenu from "vue-contextmenujs"
-
+import { ConfigProvider, Calendar } from 'ant-design-vue';//引用
+Vue.use(Antd)
+Vue.component(ConfigProvider.name, ConfigProvider);//注册
+Vue.component(Calendar.name, Calendar);//注册
 Vue.config.productionTip = false
-
 new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app')
 
-Vue.use(Antd)
 Vue.use(Contextmenu)
 

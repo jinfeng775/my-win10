@@ -57,10 +57,13 @@ export default {
 
 <style scoped>
   .frame {
-    height: 94%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 40px;
     background-image: url('../assets/images/win10bg.jpg');
     background-repeat: no-repeat;
     background-position: center center;
-     background-size: cover;
+    background-size: cover;
   }
 </style>

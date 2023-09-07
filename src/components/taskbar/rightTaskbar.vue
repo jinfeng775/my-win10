@@ -1,15 +1,20 @@
 <template>
   <div>
-    <div>
-      {{formattedDate}}
+    <div class="dater">
+      {{ formattedDate }}
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  data: {
-    date: new Date()
+  data() {
+    return {
+      date: new Date(),
+    }
+  },
+  methods: {
   },
   mounted() {
     var _this = this;
@@ -18,19 +23,19 @@ export default {
     }, 1000)
   },
   computed: {
-  formattedDate: function () {
-    var date = this.date;
-    var year = date.getFullYear();
-    var month = (date.getMonth() + 1).toString().padStart(2, '0');
-    var day = date.getDate().toString().padStart(2, '0');
-    var hours = date.getHours().toString().padStart(2, '0');
-    var minutes = date.getMinutes().toString().padStart(2, '0');
-    var seconds = date.getSeconds().toString().padStart(2, '0');
-    return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    formattedDate: function () {
+      var date = this.date;
+      var hours = date.getHours().toString().padStart(2, '0');
+      var minutes = date.getMinutes().toString().padStart(2, '0');
+      var seconds = date.getSeconds().toString().padStart(2, '0');
+      return hours + ':' + minutes
+    }
   }
-}
 }
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
+.dater {
+  color: #fff;
+}
 </style>
