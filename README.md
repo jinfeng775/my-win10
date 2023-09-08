@@ -7,7 +7,7 @@ npm install
 右键菜单控制
 <!-- 2023年9月8日14:55:17 -->
 新增svg
-支持在线复制*svg代码*直接使用和
+支持在线复制 _*svg代码*_ 直接使用和
 `<svg-icon icon-class="win" size="40"></svg-icon>`
 模板使用
 
