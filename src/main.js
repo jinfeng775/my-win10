@@ -11,7 +11,6 @@ import Contextmenu from "vue-contextmenujs"
 import 'animate.css';
 import { ConfigProvider, Calendar } from 'ant-design-vue';//引用
 import './icons'
-
 Vue.use(Antd)
 Vue.component(ConfigProvider.name, ConfigProvider);//注册
 Vue.component(Calendar.name, Calendar);//注册

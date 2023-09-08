@@ -12,6 +12,7 @@
         我的电脑
       </div>
     </div>
+    <svg-icon icon-class="win" size="40"></svg-icon>
   </div>
  </div>
 </template>
