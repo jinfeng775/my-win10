@@ -1,7 +1,7 @@
 <template>
   <div  class="desktop">
     <Frame/>
-    <calendar v-show="calendarShow"/>
+    <calendar v-if="calendarShow"/>
     <Taskbar/>
   </div>
 </template>

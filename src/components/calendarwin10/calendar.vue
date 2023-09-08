@@ -71,8 +71,8 @@ export default {
         ev.preventDefault();
         let mouseX = event.clientX + document.body.scrollLeft;//鼠标x位置
         let mouseY = event.clientY + document.body.scrollTop;//鼠标y位置
-        let objX = mouseX - objLeft - 37;
-        let objY = mouseY - objTop - 37;
+        let objX = mouseX - objLeft - 43;
+        let objY = mouseY - objTop - 65;
         this.style["background-position"] = (objX) + "px " +
           (objY) + "px";
       }, true);
@@ -202,28 +202,27 @@ export default {
   right: 0;
   background: rgb(31, 31, 31);
   color: #fff;
-
   .formattedDate {
     font-size: 50px;
     text-align: left;
     padding-left: 20px;
+    overflow: hidden;
   }
 
   .specificDate {
     text-align: left;
     color: #1890ff;
     padding-left: 30px;
+    overflow: hidden;
   }
 
   #acalendar {
-
     ::v-deep .ant-fullcalendar {
       color: #fff;
-
       .ant-fullcalendar-tbody {
         background: rgb(31, 31, 31);
         color: white;
-        background-image: radial-gradient(circle, rgb(83, 83, 83), rgba(31, 31, 31, 0.056));
+        background-image: radial-gradient(circle, rgb(187, 185, 185), rgba(31, 31, 31, 0.056));
         background-size: 92px 92px;
         background-repeat: no-repeat;
         background-position: -92px -92px;
@@ -241,7 +240,7 @@ export default {
           background-clip: content-box;
           padding: 2px;
           background-color: rgb(31, 31, 31);
-          border: 1px solid rgb(31, 31, 31);
+          border: 0.5px solid rgb(31, 31, 31);
         }
       }
 

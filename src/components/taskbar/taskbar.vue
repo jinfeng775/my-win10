@@ -30,7 +30,7 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss"  scoped>
 .taskbar {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 40px;
   width: 100%;
