@@ -66,7 +66,7 @@ export default {
         i: 30
       }, {
         classIcon: '新建文件夹',
-        name: '新建文件夹',
+        name: '我的文件',
         i: 30
       }
       ]
