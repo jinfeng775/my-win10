@@ -1,5 +1,5 @@
 <template>
-<div style="width: 1000px;height: 500px;overflow: auto;">
+<div style="overflow: auto;max-width: 700px;max-height: 500px;">
    <a-calendar />
 </div>
 
