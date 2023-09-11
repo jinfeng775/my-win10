@@ -21,8 +21,15 @@ export default {
 @import "./font-style/font.css";
 body{
   #app{
-    font-family: PingFang;
+    font-family: PingFang !important;
   }
+  .ant-modal-wrap  {
+    text-align: center;
+  }
+   .windowedDialog {
+    width: auto !important;
+    display: inline-block;
+   }
 }
 
 </style>

@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    calendarShow: false
+    calendarShow: false,
+    windowedShow: false,
   },
   getters: {
   },
@@ -13,12 +14,20 @@ export default new Vuex.Store({
     SET_CALENDARSHOW(state, calendarShow) {
       state.calendarShow = calendarShow
     },
+    SET_WINDOWEDSHOW(state, windowedShow) {
+      state.windowedShow = windowedShow
+    },
   },
   actions: {
     setCalendarShow({
       commit
     }, calendarShow) {
       commit('SET_CALENDARSHOW', calendarShow)
+    },
+    setWindowedShoww({
+      commit
+    }, windowedShow) {
+      commit('SET_WINDOWEDSHOW', windowedShow)
     }
   },
   modules: {

@@ -1,9 +1,10 @@
 <template>
   <!-- 桌面 -->
-  <div @contextmenu.prevent="onContextmenu" class="frame">
+  <div @click="cancelPop" @contextmenu.prevent="onContextmenu" class="frame">
+  <windowed></windowed>
     <div class="software_warp">
       <draggable element="div" v-model="app" animation="500">
-        <div :key="i" v-for="(item, i) in app" class="software">
+        <div @dblclick="open(item.classIcon)" :key="i" v-for="(item, i) in app" class="software">
           <div>
             <svg-icon :icon-class="item.classIcon" size="30"></svg-icon>
           </div>
@@ -13,11 +14,14 @@
         </div>
       </draggable>
     </div>
+
   </div>
 </template>
 
 <script>
 import draggable from 'vuedraggable'
+import windowed from '../components/windowed/index.vue'
+
 export default {
   data() {
     return {
@@ -75,6 +79,19 @@ export default {
   created() {
   },
   methods: {
+    open(item){
+      console.log("%c Line:86 🍤 item", "font-size:16px;color:#ffffff;background:#33a5ff", item);
+      if (item === '日历') {
+       this.mixinOpen('calendarMax')
+      }
+
+    },
+    showModal() {
+      this.$store.dispatch('setWindowedShoww', true)
+    },
+    cancelPop(){
+      this.$store.dispatch('setCalendarShow', false)
+    },
     onContextmenu(event) {
       this.$contextmenu({
         items: [
@@ -124,6 +141,7 @@ export default {
   components: {
     //调用组件
     draggable,
+    windowed
   }
 }
 </script>

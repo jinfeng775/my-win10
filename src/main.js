@@ -11,6 +11,9 @@ import Contextmenu from "vue-contextmenujs"
 import 'animate.css';
 import { ConfigProvider, Calendar } from 'ant-design-vue';//引用
 import './icons'
+// 全局通用方法
+import mixin from './utils/mixins/mixin'
+Vue.mixin(mixin)
 Vue.use(Antd)
 Vue.component(ConfigProvider.name, ConfigProvider);//注册
 Vue.component(Calendar.name, Calendar);//注册

@@ -35,7 +35,7 @@ export default {
     }
     this.calendarLoad()
     this.specificdate()
-    this.cancelPop()
+    // this.cancelPop()
   },
 
   methods: {

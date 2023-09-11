@@ -1,14 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import desktop from '../views/desktop.vue'
+import calendarMax from '../components/calendarwin10/calendarMax.vue'
+import b from '../components/test1/b.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/desktop',
+    path: '',
     name: 'desktop',
-    component: desktop
+    component: desktop,
+    children: [
+      {
+        path: '/calendarMax',
+        name: 'calendarMax',
+        component: calendarMax,
+      },
+      {
+        path: 'b',
+        name: 'b',
+        component: b,
+      }
+    ]
   },
   {
     path: '/about',
@@ -21,7 +35,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })
