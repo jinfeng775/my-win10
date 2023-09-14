@@ -21,7 +21,7 @@
 <script>
 import draggable from 'vuedraggable'
 import windowed from '../components/windowed/index.vue'
-
+import { testLogin } from '../api/test'
 export default {
   data() {
     return {
@@ -77,8 +77,17 @@ export default {
     };
   },
   created() {
+    this.test()
   },
   methods: {
+    test(){
+      let data = {
+        'u':'123123'
+      }
+      testLogin(data).then(res => {
+        console.log("%c Line:84 🌶 res", "font-size:16px;color:#ffffff;background:#ffdd4d", res);
+      })
+    },
     open(item){
       console.log("%c Line:86 🍤 item", "font-size:16px;color:#ffffff;background:#33a5ff", item);
       if (item === '日历') {

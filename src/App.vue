@@ -21,7 +21,7 @@ export default {
 @import "./font-style/font.css";
 body{
   #app{
-    font-family: PingFang !important;
+    font-family: PingFang,serif !important;
   }
   .ant-modal-wrap  {
     text-align: center;
