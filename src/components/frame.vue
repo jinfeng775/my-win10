@@ -21,7 +21,7 @@
 <script>
 import draggable from 'vuedraggable'
 import windowed from '../components/windowed/index.vue'
-import { testLogin } from '../api/test'
+import { testLogin } from '@/api/test'
 export default {
   data() {
     return {
@@ -84,6 +84,8 @@ export default {
       let data = {
         'u':'123123'
       }
+        console.log("%c Line:85 🧀 data", "font-size:16px;color:#ffffff;background:#6ec1c2", data);
+
       testLogin(data).then(res => {
         console.log("%c Line:84 🌶 res", "font-size:16px;color:#ffffff;background:#ffdd4d", res);
       })
