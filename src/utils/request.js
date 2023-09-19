@@ -5,12 +5,14 @@ import notification from 'ant-design-vue/es/notification'
 const request = axios.create({
   // API 请求的默认前缀
   // baseURL: process.env.VUE_APP_API_BASE_URL,
-  baseURL: 'http://49.232.253.214:5000',
+  // baseURL: 'http://49.232.253.214:5000',
+  baseURL: 'http://127.0.0.1:5000',
   timeout: 60000 // 请求超时时间
 })
 
 // 异常拦截处理器 浏览器
 const errorHandler = (error) => {
+  console.log("%c Line:16 🥑 error", "font-size:16px;color:#ffffff;background:#e41a6a", error);
   if (error.response) {
     const data = error.response.data
     // 从 localstorage 获取 token
@@ -38,9 +40,9 @@ const errorHandler = (error) => {
         })
       }
     }
-    if (error.response.status === 502) {
+    if (error.response.status === 502 || error.response.status === 500) {
       notification.error({
-        message: '服务暂时不可用，请稍后再试'
+        message: error.response.status + '服务暂时不可用，请稍后再试 '
       })
       return
     }
@@ -57,6 +59,12 @@ const errorHandler = (error) => {
         //   description: '请重试'
         // })
       }
+    }
+    if (error.code === 'ERR_NETWORK') {
+      notification.error({
+        message: '网络错误',
+        description: '请联系管理员!'
+      })
     }
     return Promise.reject(data)
   }
