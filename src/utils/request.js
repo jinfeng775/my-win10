@@ -7,12 +7,11 @@ const request = axios.create({
   // baseURL: process.env.VUE_APP_API_BASE_URL,
   // baseURL: 'http://49.232.253.214:5000',
   baseURL: 'http://127.0.0.1:5000',
-  timeout: 60000 // 请求超时时间
+  timeout: 30000 // 请求超时时间
 })
 
 // 异常拦截处理器 浏览器
 const errorHandler = (error) => {
-  console.log("%c Line:16 🥑 error", "font-size:16px;color:#ffffff;background:#e41a6a", error);
   if (error.response) {
     const data = error.response.data
     // 从 localstorage 获取 token
@@ -67,6 +66,11 @@ const errorHandler = (error) => {
       })
     }
     return Promise.reject(data)
+  } else {
+    notification.error({
+      message: '网络错误',
+      description: '请联系管理员!'
+    })
   }
   return Promise.reject(error)
 }
